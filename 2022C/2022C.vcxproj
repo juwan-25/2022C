@@ -140,11 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="C문법\04.c" />
-    <ClCompile Include="C문법\04 함수의 정의.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="C문법\04.h" />
+    <ClCompile Include="C문법\05 논리연산자.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

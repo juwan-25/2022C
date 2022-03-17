@@ -15,16 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C문법\04 함수의 정의.c">
+    <ClCompile Include="C문법\05 논리연산자.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="C문법\04.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="C문법\04.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
