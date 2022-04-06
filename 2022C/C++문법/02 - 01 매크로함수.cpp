@@ -7,8 +7,9 @@ using namespace std;
 
 int main(void)
 {
-	cout << jegob(3) << endl;
-	cout << 3 * 3 << endl;
+	//연산자 우선순위로 인해 의도하지 않은 결과가 나옴
+	cout << jegob(3+1) << endl; // 7
+	cout << 3+1 * 3+1 << endl; // 7
 
 	return 0;
 }
