@@ -18,8 +18,8 @@ inline int jegob(int a)
 
 int main(void)
 {
-	cout << jegob(3+1) << endl; // 16
-	cout << ((3+1) * (3+1)) << endl; // 16
+	cout << jegob(3 + 1) << endl; // 16
+	cout << ((3 + 1) * (3 + 1)) << endl; // 16
 
 	return 0;
-}
+};
