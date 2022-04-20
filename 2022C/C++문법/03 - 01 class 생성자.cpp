@@ -9,8 +9,14 @@ private:
 	int nHakbun;
 	string sName;
 
+public:
 	//생성자 : 객체가 생성될 때, 호출되는 함수
-	//default 생성자
+	Student()
+	{
+		nHakbun = 1234;
+		sName = "이사람";
+		cout << "학번이 등록되었습니다."<<endl;
+	}
 };
 
 int main(void)
