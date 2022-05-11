@@ -21,7 +21,7 @@ int main(void)
 	Student stu1;
 	stu1.show();
 
-	Student stu2 = Student(1111,"JWP");
+	Student stu2 = Student(2219,"Zeus");
 	stu2.show();
 
 	return 0;
@@ -30,14 +30,14 @@ int main(void)
 Student::Student()
 {
 	nHakbun = 1234;
-	sName = "이사람";
+	sName = "Hong";
 	cout << "학번이 등록되었습니다." << endl;
 }
 
 Student::Student(int Hakbun, string Name)
 {
-	nHakbun = Hakbun;
-	sName = Name;
+	this->nHakbun = Hakbun;
+	this->sName = Name;
 	cout << "학번이 등록되었습니다." << endl;
 }
 
