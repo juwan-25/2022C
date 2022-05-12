@@ -11,8 +11,10 @@ private:
 
 public:
 	//생성자 : 객체가 생성될 때, 호출되는 함수
-	Student();
+	
 	Student(int Hakbun, const char* Name);
+	~Student();
+
 	void show();
 };
 
@@ -32,9 +34,16 @@ Student::Student(int Hakbun, const char* Name)
 	int len = strlen(Name)+1;
 	sName = new char[len];
 	strcpy(sName, Name);
+	cout << "생성자 호출" << endl;
 	cout << "학번이 등록되었습니다." << endl;
+
 }
 
+Student::~Student()
+{
+	delete []sName;
+	cout << "소멸자 호출" << endl;
+}
 
 void Student::show()
 {
