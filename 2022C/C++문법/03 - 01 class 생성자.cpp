@@ -11,8 +11,13 @@ private:
 
 public:
 	//생성자 : 객체가 생성될 때, 호출되는 함수
-	
+	Student();
 	Student(int Hakbun, const char* Name);
+
+	//복사 생성자
+	Student(const Student& rhs);
+
+	//소멸자
 	~Student();
 
 	void show();
@@ -20,8 +25,14 @@ public:
 
 int main(void)
 {
+	//일반생성자 호출
 	Student stu1 = Student(2219, "Zeus");
+
+	//복사 생성자 호출
+	Student stu2 = stu1;
+
 	stu1.show();
+	stu2.show();
 
 	return 0;
 }
@@ -37,6 +48,12 @@ Student::Student(int Hakbun, const char* Name)
 	cout << "생성자 호출" << endl;
 	cout << "학번이 등록되었습니다." << endl;
 
+}
+
+Student::Student(const Student& rhs)
+	:nHakbun(rhs.nHakbun), sName(rhs.sName)
+{
+	cout << "복사 생성자 호출" << endl;
 }
 
 Student::~Student()
