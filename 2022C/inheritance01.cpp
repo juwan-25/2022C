@@ -7,9 +7,9 @@ using namespace std;
 
  class Person {
  private :
-	 int nAge;
 	 string sName;
-
+ protected :
+	 int nAge;
  public:
 	 Person();
 	 Person(string name, int age);
@@ -32,7 +32,7 @@ using namespace std;
 	 cout << "³ªÀÌ : " << nAge << endl;
  }
 
- class Student :public Person {
+ class Student :protected Person {
  private:
 	 int nGrade;
  public :
@@ -51,6 +51,7 @@ using namespace std;
  }
 
  void Student::study() {
+	 nAge = 3;
 	 hi();
 
  }
