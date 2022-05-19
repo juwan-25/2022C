@@ -19,7 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C++문법\03 - 01 class 생성자.cpp" />
+    <ClCompile Include="C++문법\03 - 01 class 생성자.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="inheritance01.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

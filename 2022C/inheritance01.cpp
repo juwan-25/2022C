@@ -32,8 +32,39 @@ using namespace std;
 	 cout << "나이 : " << nAge << endl;
  }
 
- 
+ class Student :public Person {
+ private:
+	 int nGrade;
+ public :
+	 Student();
+	 Student(string name, int age, int grade);
+	 void study();
 
+ };
+
+ Student::Student() :Person() {
+	 nGrade = 0;
+ }
+
+ Student::Student(string name, int age, int grade) : Person(name, age), nGrade(grade) {
+
+ }
+
+ void Student::study() {
+	 hi();
+
+ }
+
+ int main()
+ {
+	 Person* person = new Person("황인준", 23);
+	 person->hi();
+
+	 Student student;
+	 student.study();
+
+	 return 0;
+ }
 
 
 
