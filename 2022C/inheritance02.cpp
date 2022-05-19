@@ -9,3 +9,22 @@ public:
 		width = w;
 	}
 };
+
+class Phone {
+	void call();
+	void receive();
+	void sendMessage();
+};
+
+class Music {
+	void soundoff();
+	void soundon();
+};
+
+class SmartPhone : public Music {
+
+};
+
+class SmartPhone : public Phone {
+
+};
