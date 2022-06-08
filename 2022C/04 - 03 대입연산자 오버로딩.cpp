@@ -16,20 +16,7 @@ public:
 	Student(int Hakbun, const char* Name);
 	Student(const Student& rhs);
 	~Student();
-	Student& operator=(const Student& rhs) {
-		cout << "대입 연산자 호출" << endl;
-
-		//기존에 존재하는 공간 제거, 새공간 할당 준비
-		delete[]sName;
-		
-		nHakbun = rhs.nHakbun;
-		int len = strlen(rhs.sName) + 1;		// 공간의 갯수 파악
-		sName = new char[len];			// 갯수만큼 메모리 할당
-		strcpy(sName,rhs.sName);
-
-		return *this;
-
-	}
+	Student& operator=(const Student& rhs);
 	void show();
 
 };
@@ -68,6 +55,23 @@ Student::Student(const Student& rhs)
 {
 	sName = new char[strlen(rhs.sName) + 1];
 	strcpy_s(sName, strlen(rhs.sName) + 1, rhs.sName);
+}
+
+
+//연산자 오버로딩
+Student& Student::operator=(const Student& rhs) {
+	cout << "대입 연산자 호출" << endl;
+
+	//기존에 존재하는 공간 제거, 새공간 할당 준비
+	delete[]sName;
+
+	nHakbun = rhs.nHakbun;
+	int len = strlen(rhs.sName) + 1;		// 공간의 갯수 파악
+	sName = new char[len];			// 갯수만큼 메모리 할당
+	strcpy(sName, rhs.sName);
+
+	return *this;
+
 }
 
 int main(void)
