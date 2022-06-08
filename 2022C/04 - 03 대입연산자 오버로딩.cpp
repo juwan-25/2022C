@@ -18,6 +18,10 @@ public:
 	~Student();
 	Student& operator=(const Student& rhs) {
 		cout << "대입 연산자 호출" << endl;
+
+		//기존에 존재하는 공간 제거, 새공간 할당 준비
+		delete[]sName;
+		
 		nHakbun = rhs.nHakbun;
 		int len = strlen(rhs.sName) + 1;		// 공간의 갯수 파악
 		sName = new char[len];			// 갯수만큼 메모리 할당
