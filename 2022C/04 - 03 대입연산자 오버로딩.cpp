@@ -90,5 +90,11 @@ int main(void)
 	stu1 = stu3;
 	stu1.show();
 
+	for (int i = 0; i < 100000; i++) {
+		Student* s = new Student(i, "HRJ");
+		delete s;
+	}
+		
+
 	return 0;
 }
