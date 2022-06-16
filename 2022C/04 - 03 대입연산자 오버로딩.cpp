@@ -30,7 +30,7 @@ Student::Student()
 Student::Student(int Hakbun, const char* Name)
 	: nHakbun(Hakbun)	// 멤버변수(매개변수)
 {
-	cout << "일반생성자 호출." << endl;
+	cout << "Student 일반생성자 호출." << endl;
 	int len = strlen(Name) + 1;		// 공간의 갯수 파악
 	sName = new char[len];			// 갯수만큼 메모리 할당
 	strcpy(sName, Name);
@@ -40,7 +40,7 @@ Student::Student(int Hakbun, const char* Name)
 Student::~Student()
 {
 	delete[]sName;
-	cout << "소멸자 호출" << endl;
+	cout << "Student 소멸자 호출" << endl;
 }
 
 void Student::show()
@@ -53,6 +53,7 @@ void Student::show()
 Student::Student(const Student& rhs)
 	:nHakbun(rhs.nHakbun)
 {
+	cout << "Student 복사 생성자 호출" << endl;
 	sName = new char[strlen(rhs.sName) + 1];
 	strcpy_s(sName, strlen(rhs.sName) + 1, rhs.sName);
 }
@@ -74,27 +75,32 @@ Student& Student::operator=(const Student& rhs) {
 
 }
 
+class HighSchoolStudent : public Student
+{
+public:
+	//생성자
+	HighSchoolStudent(int Hakbun, const char* Name, string depart)
+		: Student(Hakbun, Name), sDepart(depart) 
+	{
+		cout << "HighSchoolStudent 생성자 호출" << endl;
+	}
+	
+	//소멸자
+	~HighSchoolStudent() 
+	{
+		cout << "HighSchoolStudent 소멸자 호출" << endl;
+	}
+private:
+	string sDepart;
+
+};
+
+
+
 int main(void)
 {
-	// "일반생성자 호출" 출력
-	Student stu1 = Student(1111, "JWP");
-	Student stu3 = Student(3230, "Renjun");
-
-	stu1.show();
-	// (1111, "JWP")가 복사됨. 일반생성자 호출X
-
-	Student stu2 = Student(stu1);
-	
-	stu2.show();
-
-	stu1 = stu3;
-	stu1.show();
-
-	for (int i = 0; i < 100000; i++) {
-		Student* s = new Student(i, "HRJ");
-		delete s;
-	}
-		
+	HighSchoolStudent hss = HighSchoolStudent(3230, "황인준", "SW");
+	hss.show();	//부모클래스의 멤버 함수 호출_자식에 구현X
 
 	return 0;
 }
