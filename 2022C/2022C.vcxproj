@@ -27,6 +27,9 @@
     </ClCompile>
     <ClCompile Include="Student상속.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="00 - 클래스 설계.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
