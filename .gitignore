@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/2022C/수행평가3_2211이주완.cpp
+/2022C/m_string 정답.cpp
+/2022C/m_string_test.cpp
