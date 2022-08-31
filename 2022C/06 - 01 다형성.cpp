@@ -7,7 +7,7 @@ class Animal {
 public:
 	void eat() { cout << "¸Ô´Ù" << endl; }
 	//roarÇÔ¼ö¸¦ °¡»óÇÔ¼ö Å×ÀÌºí¿¡ µî·Ï(µ¿Àû ¹ÙÀÎµù)
-	void roar() { cout << "Â¢´Ù" << endl; }
+	virtual void roar() { cout << "Â¢´Ù" << endl; }
 	void walk() { cout << "°È´Ù" << endl; }
 private:
 	string name;
@@ -17,12 +17,12 @@ private:
 
 class Tiger :public Animal {
 public:
-	void roar() { cout << "¾îÈï" << endl; }
+	void roar() override { cout << "¾îÈï" << endl; }
 };
 
 class Dog :public Animal {
 public:
-	void roar() { cout << "¸Û¸Û" << endl; }
+	void roar() override { cout << "¸Û¸Û" << endl; }
 };
 
 int main()
@@ -32,11 +32,11 @@ int main()
 	delete animal;
 	
 	animal = new Dog;
-	animal->roar();//Â¢´Ù
+	animal->roar();//¸Û¸Û
 	delete animal;
 
 	animal = new Tiger;
-	animal->roar(); //Â¢´Ù
+	animal->roar(); //¾îÈï
 	delete animal;
 
 
