@@ -6,9 +6,9 @@ using namespace std;
 class Animal {
 public:
 	void eat() { cout << "¸Ô´Ù" << endl; }
+	//roarÇÔ¼ö¸¦ °¡»óÇÔ¼ö Å×ÀÌºí¿¡ µî·Ï(µ¿Àû ¹ÙÀÎµù)
 	void roar() { cout << "Â¢´Ù" << endl; }
 	void walk() { cout << "°È´Ù" << endl; }
-
 private:
 	string name;
 	int sex;
@@ -27,13 +27,17 @@ public:
 
 int main()
 {
-	Animal animal;
-	animal.roar(); //Â¢´Ù
+	Animal * animal = new Animal;
+	animal->roar(); //Â¢´Ù
+	delete animal;
+	
+	animal = new Dog;
+	animal->roar();//Â¢´Ù
+	delete animal;
 
-	Dog dog;
-	dog.roar(); //¸Û¸Û
-	Tiger tiger;
-	tiger.roar(); //¾îÈï
+	animal = new Tiger;
+	animal->roar(); //Â¢´Ù
+	delete animal;
 
 
 	return 0;
