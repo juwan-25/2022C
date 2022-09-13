@@ -3,26 +3,18 @@
 
 using namespace std;
 
-int sum(int a, int b)
-{
-	return a + b;
-}
-
-float sum(float a, float b)
-{
-	return a + b;
-}
-
-
-string sum(string a, string b) 
+//함수 템플릿
+template <typename T> 
+T sum(T a, T b)
 {
 	return a + b;
 }
 
 int main()
 {
-	cout << sum(1, 2) << endl;
-	cout << sum(1.f, 2.f) << endl;
-	cout << sum("1", "2") << endl;
+	cout << sum<int>(1, 2) << endl;
+	cout << sum<float>(1.f, 2.f) << endl;
+	//자료형을 붙여주어야 에러나지 않음
+	cout << sum<string>("1", "2") << endl;
 
 }
