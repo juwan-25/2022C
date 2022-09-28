@@ -15,17 +15,24 @@ int main()
 	s3.reserve(10);
 
 	for (int i = 0; i < 10; i++) {
-		s1[i] = "ab";
-		s2[i] = "ab";
 		s3.push_back("ab");
 	}
-
-	// idx 범위 초과(공간 부족)
-	// s1[10] = "ab";
-	// s2[10] = "ab";
 
 	// 기존 공간 크기를 확장해 삽입
 	s3.push_back("ab");
 
+	for (int i = 0; i < s3.size(); i++) {
+		cout << s3[i] << " ";
+	}
+	cout << endl;
+
+	//백터 아이템 수정
+	s3[1] = "cd";
+	s3.at(2) = "ef";
+
+	for (int i = 0; i < s3.size(); i++) {
+		cout << s3[i] << " ";
+	}
+	cout << endl;		
 	return 0;
 }
