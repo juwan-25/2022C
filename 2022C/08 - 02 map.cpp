@@ -8,10 +8,10 @@ int main()
 {
 	//map은 key 값에 따라 자동 정렬됨 
 	map<string, string> m;
-	m.insert(pair<string, string>("김신", "공유"));
-	m.insert(pair<string, string>("지은탁", "김고은"));
-	m.insert(pair<string, string>("저승사자", "이동욱"));
-	m.insert(pair<string, string>("써니", "유인나"));
+	m["김신"] = "공유";
+	m["지은탁"] = "김고은";
+	m["저승사자"] = "이동욱";
+	m["써니"] = "유인나";
 
 	map<string, string>::iterator iter;
 	for (iter = m.begin(); iter != m.end(); iter++) {
@@ -21,7 +21,8 @@ int main()
 	cout << endl; 
 
 	map<string, string>::iterator actor = m.find("김신");
-	cout << "주인공은 " << actor->second << endl;
+	if(actor != m.end())
+		cout << "주인공은 " << actor->second << endl;
 
 	return 0;
 }
