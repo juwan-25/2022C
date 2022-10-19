@@ -6,12 +6,13 @@ using namespace std;
 enum Food {
 	KOREAN,		//한식
 	WESTERN,	//중식
-	CHINESE		//양식
+	CHINESE,	//양식
+	COUNT
 };
 
 int main()
 {
-	string food_spot[3];
+	string food_spot[Food::COUNT];	//3
 
 	food_spot[Food::KOREAN] = "소문난 성수 감자탕";
 	food_spot[Food::CHINESE] = "텐파";
