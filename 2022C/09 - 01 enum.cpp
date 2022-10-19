@@ -3,13 +3,19 @@
 
 using namespace std;
 
+enum Food {
+	KOREAN,		//한식
+	WESTERN,	//중식
+	CHINESE		//양식
+};
+
 int main()
 {
 	string food_spot[3];
 
-	food_spot[0] = "소문난 성수 감자탕";
-	food_spot[1] = "텐파";
-	food_spot[2] = "감성타코";
+	food_spot[Food::KOREAN] = "소문난 성수 감자탕";
+	food_spot[Food::CHINESE] = "텐파";
+	food_spot[Food::WESTERN] = "감성타코";
 
 	cout << "메뉴선택" << endl;
 	int menu = 1;
