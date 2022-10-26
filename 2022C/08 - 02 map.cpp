@@ -13,6 +13,11 @@ int main()
 	m["저승사자"] = "이동욱";
 	m["써니"] = "유인나";
 
+	for (auto iter = m.begin(); iter != m.end(); iter++) {
+		cout << iter->first << "역 " << iter->second << endl;
+	}
+
+
 	map<string, string>::iterator iter;
 	for (iter = m.begin(); iter != m.end(); iter++) {
 		cout << iter->first << "역 " << iter->second << endl;
