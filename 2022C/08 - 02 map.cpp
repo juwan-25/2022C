@@ -13,8 +13,8 @@ int main()
 	m["저승사자"] = "이동욱";
 	m["써니"] = "유인나";
 
-	for (auto iter = m.begin(); iter != m.end(); iter++) {
-		cout << iter->first << "역 " << iter->second << endl;
+	for (auto x:m) {
+		cout << x.first << "역 " << x.second << endl;
 	}
 
 
