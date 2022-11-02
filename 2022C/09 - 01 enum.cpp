@@ -18,6 +18,7 @@ int main()
 	food_spot[Food::CHINESE] = "텐파";
 	food_spot[Food::WESTERN] = "감성타코";
 
+
 	cout << "메뉴선택" << endl;
 	int menu = 1;
 
